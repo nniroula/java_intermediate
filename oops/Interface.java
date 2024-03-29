@@ -25,6 +25,7 @@ interface Interf{
     String getName(); // this is already public abstract String getName()
 
  }
+
 class InterfaceImplementation implements Interf{
     public int add(){
         return 3 + 2;
@@ -49,6 +50,38 @@ class InterfaceImplementation implements Interf{
         System.out.printf("name function returs %s \n", name);
     }
 }
+
+// implement partial methods of interface -> use abstract class
+// abstract class is partially complete class
+// Child class of abstract class is repsonsible for implementing remaining mehtods.
+abstract class PartialInterImplementation implements Interf{
+    public int add(){
+        return 2 + 4;
+    }
+}
+
+/*NOTE: You cannot instantiate abstract class, but can inherit it
+ * - if the Interface class extends PartialInterImplementation method, then it must also
+ * implement multiply and getName methods of the Interf interface b/c child class of the
+ * PartialInterImplementation method is responsible for implementing remaining methods of the interf interface.
+*/
+
+// child class of PartialInterImplementation class
+class ImplentRemainingInterfMethods extends PartialInterImplementation{
+    // remaining interf methods that are not implemented in PartialInterImplementation class
+    public double multiply(){
+        return 6*2;
+    }
+
+    public String getName(){
+        return "Pabi";
+    }
+
+    /* if this class is instantiated, you will have automatic access to add method implemented
+    in PartialInterImplementation class.
+    */
+}
+
 public class Interface{
     public static void main(String []args){
         System.out.println("Interface implementation");
@@ -56,5 +89,14 @@ public class Interface{
         InterfaceImplementation interImp = new InterfaceImplementation();
        //System.out.println(interImp.add());
         interImp.displayResults();
+
+        // abstract class
+        //PartialInterImplementation pi = new PartialInterImplementation(); // cannot instantiate abstract class, but can inherit
+        
+         /* If the ImplentRemainingInterfMethods class is instantiated, you will have 
+         automatic access to add method implemented in PartialInterImplementation class.
+        */
+        ImplentRemainingInterfMethods irim = new ImplentRemainingInterfMethods();
+        System.out.println("add function invoked in ImplentRemainingInterMethods: " + irim.add());
     }
 }
