@@ -10,8 +10,9 @@ package oops;
  */
 
 class Parent{
-    public String getCollege(){
-        return "CU Denver";
+    // make this method static to call it main method
+    public static String getCollege(String name){
+        return name;
     }
 }
 
@@ -20,7 +21,6 @@ public class Inheritance extends Parent{
         System.out.println("Inheritance in Java:-");
 
         // method from Parent class
-        Parent pr = new Parent();
-        System.out.println("Method call from parent class" + pr.getCollege());
+        System.out.println("Method call from parent class - " + getCollege("MSU Denver"));
     }
 }
