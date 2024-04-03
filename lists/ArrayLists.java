@@ -79,7 +79,30 @@ class ALImplementation{
         }
         return names;
     }
+
+    /**
+     * takes in arraylist and returns an element
+     * @param intAL ArrayList
+     * @return an element
+     */
+    public int getElement(ArrayList<Integer> intAL){
+        int element = 0;
+        for(int i = 0; i < intAL.size(); i++){
+            if(intAL.get(i) % 2 == 0){
+                element = intAL.get(i);
+                break;
+            }
+        }
+        return element;
+    }
+
+    public void useForEachLoop(ArrayList<String> frameworks){
+        for(String framework: frameworks){
+            System.out.println(framework);
+        }
+    }
 }
+
 
 public class ArrayLists {
     public static void main(String[]args){
@@ -125,5 +148,22 @@ public class ArrayLists {
         System.out.println("updateElement method .......");
         System.out.println(updatedAL);
 
+        //getElement method
+        ArrayList<Integer> intAL = new ArrayList<>();
+        intAL.add(1);
+        intAL.add(3);
+        intAL.add(4);
+        int elem = aListImplemObj.getElement(intAL);
+        System.out.println("getElement method .....");
+        System.out.println(elem);
+
+        //useForEachLoop method
+        System.out.println();
+        System.out.println("ForEach loop ....");
+        ArrayList<String> frameworks = new ArrayList<>();
+        frameworks.add("Hibernate");
+        frameworks.add("Spring");
+        frameworks.add("Spring Boot");
+        aListImplemObj.useForEachLoop(frameworks);
     }
 }
