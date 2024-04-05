@@ -10,7 +10,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
-  * NOTE: use finally block with try. Never use it after catch block
+  * NOTE: use finally block with try. Never use it after catch block.
+    Put try - finally block inside try-catch block. The code here needs improvement.
   */
 
  class TryFinally{
