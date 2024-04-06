@@ -39,14 +39,35 @@ class EmployeeInfo{
        return ll;
     }
 
-    public LinkedList<String> add(){
+    public LinkedList<String> addElement(){
         LinkedList<String> ll = new LinkedList<>();
         ll.addFirst("MSU Denver");
         ll.addLast("University of Colorado Denver");
         ll.addFirst("Community College of Aurora");
         return ll;
     }
-  
+
+    public String getElement(){
+        LinkedList<String> ll = new LinkedList<>();
+        ll.addFirst("Prinsha");
+        ll.addLast("Prabha");
+        ll.addLast("Pabi");
+        ll.addFirst("Nabin");
+
+        // get them back
+        String firstName = ll.getFirst(); // try getLast()
+        return firstName;
+    }
+
+    public int returnRemovedElement(){
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.addFirst(2);
+        ll.addLast(4);
+        ll.addFirst(8);
+
+        int removedFirstElement = ll.removeFirst();
+        return removedFirstElement;
+    }
 }
 
 //main class
@@ -57,7 +78,15 @@ public class LinkedLists {
         System.out.println(lls);
 
         // add method of EmployeeInfo class
-        LinkedList<String> colleges = ei.add();
-        System.out.println("add method linkedlist :- \n" + colleges);
+        LinkedList<String> colleges = ei.addElement();
+        System.out.println("addElement method linkedlist :- \n" + colleges);
+
+        // get method
+        String firstElement = ei.getElement();
+        System.out.println("getElement method linkedlist :- \n" + firstElement);
+
+        // remove method
+        int removedFirstElement = ei.returnRemovedElement();
+        System.out.println("remove method output :- \n" + removedFirstElement);
     }
 }
