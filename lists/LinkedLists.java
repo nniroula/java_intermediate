@@ -1,6 +1,7 @@
 package lists;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Linked is a generic class. Insertion and removal is efficient.
@@ -68,6 +69,10 @@ class EmployeeInfo{
         int removedFirstElement = ll.removeFirst();
         return removedFirstElement;
     }
+
+    public boolean isLLEmpty(List<String> list){
+        return list.isEmpty();
+    }
 }
 
 //main class
@@ -88,5 +93,10 @@ public class LinkedLists {
         // remove method
         int removedFirstElement = ei.returnRemovedElement();
         System.out.println("remove method output :- \n" + removedFirstElement);
+    
+        //isLLEmpty method
+        List<String> list = new LinkedList<>();
+        list.add("Java");
+        System.out.println(ei.isLLEmpty(list));
     }
 }
