@@ -73,6 +73,11 @@ class EmployeeInfo{
     public boolean isLLEmpty(List<String> list){
         return list.isEmpty();
     }
+
+    // contains
+    public boolean doesLLContainElement(LinkedList<Double> llist){
+        return llist.contains(24.00);
+    }
 }
 
 //main class
@@ -98,5 +103,11 @@ public class LinkedLists {
         List<String> list = new LinkedList<>();
         list.add("Java");
         System.out.println(ei.isLLEmpty(list));
+
+        //doesLLContainElement method
+        LinkedList<Double> ll = new LinkedList<Double>();
+        ll.addFirst(24.00);
+        System.out.println("doesLLContainElement method ......");
+        System.out.println(ei.doesLLContainElement(ll));
     }
 }
