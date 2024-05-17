@@ -1,6 +1,8 @@
 package multipleClasses;
 
-public class MarioGame {
+// public class MarioGame{
+
+public class MarioGame implements InterfaceConsole{
 
     // left button 
     public void left(){
@@ -20,6 +22,10 @@ public class MarioGame {
     // down button
     public void down(){
         System.out.println("DOWN");
+    }
+
+    public void getGameType() {
+        System.out.println("Mario Game class...");
     }
     
 }

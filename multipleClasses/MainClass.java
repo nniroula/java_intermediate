@@ -7,6 +7,12 @@ public class MainClass {
         MarioGame marioGameObj = new MarioGame();
         GameRunner gameRunnerObj = new GameRunner(marioGameObj);
         gameRunnerObj.run();
+
+
+        // call call the interface type with SuperContra class data type
+        SuperContra superContraObj = new SuperContra();
+        GameRunner gameRunnerObj2 = new GameRunner(superContraObj);
+        gameRunnerObj2.run();
     }
     
 }
